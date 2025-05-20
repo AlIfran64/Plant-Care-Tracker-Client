@@ -11,7 +11,7 @@ const Root = () => {
     <div>
 
       <header>
-        <section className="fixed top-8 w-full z-50">
+        <section className="lg:fixed top-8 w-full z-50">
           <Navbar />
         </section>
         <Banner />

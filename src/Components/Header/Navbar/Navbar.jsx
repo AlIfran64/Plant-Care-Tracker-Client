@@ -1,19 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
+
+  const [navModal, setNavModal] = useState(false);
+
+
+
   return (
     <div
-      className="w-11/12 mx-auto py-4 px-8 rounded-full flex justify-between items-center 
-                bg-white shadow-xl backdrop-blur-sm">
+      className="lg:w-11/12 mx-auto py-4 px-8 lg:rounded-full flex justify-between items-center 
+                bg-white shadow-xl backdrop-blur-sm relative z-30">
       {/* left */}
       <div className="flex items-center gap-2">
-        <img className="w-10 h-10" src="../../../../assets/images/logo.png" alt="logo" />
-        <h1 className="text-3xl font-bold">Plantify</h1>
+
+        {/* hamburger */}
+
+        <div className='md:hidden' onClick={() => setNavModal(!navModal)}>
+          <RxHamburgerMenu size={25} />
+        </div>
+
+        {/* Modal */}
+        {
+          navModal && <div className='absolute top-15 z-50 flex flex-col bg-white p-6 rounded-lg w-70'>
+            <NavLink to={'/'} className={({ isActive }) => isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : ' px-4 py-2'}>Home</NavLink>
+            <NavLink to={'/allPlants'} className={({ isActive }) => isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : ' px-4 py-2'}>All Plants</NavLink>
+            <NavLink to={'/addPlant'} className={({ isActive }) => isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : ' px-4 py-2'}>Add Plant</NavLink>
+            <NavLink to={'/myPlants'} className={({ isActive }) => isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : ' px-4 py-2'}>My Plants</NavLink>
+          </div>
+        }
+
+
+
+
+        <img className="w-6 h-6 lg:w-10 lg:h-10" src="../../../../assets/images/logo.png" alt="logo" />
+        <h1 className="text-xl lg:text-3xl font-bold">Plantify</h1>
       </div>
 
       {/* middle */}
-      <div className="flex gap-4">
+      <div className="hidden md:flex gap-4">
         <NavLink to="/" className={({ isActive }) => isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>Home</NavLink>
         <NavLink to="/allPlants" className={({ isActive }) => isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>All Plants</NavLink>
         <NavLink to="/addPlant" className={({ isActive }) => isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>Add Plant</NavLink>

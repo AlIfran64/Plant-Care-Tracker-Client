@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className='bg-[#032928] text-white pb-10 text-center'>
+      <div className='bg-[#032928] text-white py-5 text-center'>
         © {getYear(new Date())} Plantify. All rights reserved.
       </div>
     </div>
