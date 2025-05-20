@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div
       className="w-11/12 mx-auto py-4 px-8 rounded-full flex justify-between items-center 
-                bg-white shadow-md backdrop-blur-sm">
+                bg-white shadow-xl backdrop-blur-sm">
       {/* left */}
       <div className="flex items-center gap-2">
         <img className="w-10 h-10" src="../../../../assets/images/logo.png" alt="logo" />
