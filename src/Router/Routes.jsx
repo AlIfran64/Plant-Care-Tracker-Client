@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import AddPlant from "../Pages/AddPlant/AddPlant";
 import AllPlants from "../Pages/AllPlants/AllPlants";
 import MyPlants from "../Pages/MyPlants/MyPlants";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -28,4 +29,8 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '/*',
+    element: <ErrorPage></ErrorPage>
+  }
 ]);

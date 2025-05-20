@@ -14,7 +14,7 @@ const Root = () => {
         <section className="lg:fixed top-8 w-full z-50">
           <Navbar />
         </section>
-        <Banner />
+
       </header>
 
       <main>
