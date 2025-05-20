@@ -1,14 +1,20 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Footer from '../../Components/Footer/Footer';
+import Banner from '../../Components/Header/Banner/Banner';
 import Navbar from '../../Components/Header/Navbar/Navbar';
+
 
 
 const Root = () => {
   return (
     <div>
+
       <header>
-        <Navbar></Navbar>
+        <section className="fixed top-8 w-full z-50">
+          <Navbar />
+        </section>
+        <Banner />
       </header>
 
       <main>
