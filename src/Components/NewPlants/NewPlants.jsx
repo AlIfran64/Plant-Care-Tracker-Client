@@ -33,21 +33,21 @@ const NewPlants = () => {
 
 
       {/* Buttons */}
-      <div className='flex justify-center'>
+      <div className='flex justify-center mt-8'>
         {
           button ?
             <div onClick={() => {
               setData(initialNewPlantsData)
               setButton(!button);
             }} className=' inline-block'>
-              <button className='mt-10 py-3 px-10 bg-black text-xl text-white rounded-lg'>See Less</button>
+              <button className='mt-10 py-3 px-15 bg-[#1f7158] text-xl text-white rounded-lg'>See Less</button>
             </div>
             :
             <div onClick={() => {
               setData(newPlantsData);
               setButton(!button);
             }} className='inline-block'>
-              <button onClick={() => setButton(!button)} className='mt-10 py-3 px-10 bg-black text-xl text-white rounded-lg'>See All</button>
+              <button onClick={() => setButton(!button)} className='mt-10 py-3 px-15 bg-[#1f7158] text-xl text-white rounded-lg'>See All</button>
             </div>
         }
       </div>
