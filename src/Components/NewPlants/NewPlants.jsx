@@ -21,7 +21,7 @@ const NewPlants = () => {
 
   return (
     <div className='w-11/12 mx-auto my-32'>
-      <h1 className='text-center text-4xl font-semibold'>New Plants</h1>
+      <h1 className='text-center text-4xl font-bold'>New Plants</h1>
       <p className='text-xl text-center mt-3'>Meet Your New Green Companions</p>
 
 

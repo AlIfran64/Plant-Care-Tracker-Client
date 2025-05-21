@@ -24,7 +24,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <div className=" py-24 px-6 md:px-8 bg-neutral-100">
-      <h2 className="text-center text-4xl font-semibold">What Our Users Say</h2>
+      <h2 className="text-center text-4xl font-bold">What Our Users Say</h2>
       <p className='text-center mt-3 text-xl'>Real experiences from real users who’ve grown with us.</p>
       <div className="w-11/12 mx-auto grid gap-6 md:grid-cols-3 mt-15">
         {testimonials.map((testimonial, index) => (

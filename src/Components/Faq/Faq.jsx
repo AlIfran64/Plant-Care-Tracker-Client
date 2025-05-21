@@ -3,7 +3,7 @@ import React from 'react';
 const Faq = () => {
   return (
     <div className='w-11/12 mx-auto my-32'>
-      <h1 className='text-center text-4xl font-semibold'>FAQ</h1>
+      <h1 className='text-center text-4xl font-bold'>FAQ</h1>
       <p className='text-xl text-center mt-3 mb-12'>Got questions? We've got answers!</p>
 
       <div className="collapse collapse-arrow bg-base-100 border border-base-300">

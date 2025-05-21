@@ -8,7 +8,7 @@ const BeginnerFriendlyPlants = () => {
         Start Your Green Journey with These Simple Choices
       </p>
 
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-12'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-16'>
         {[
           "p1.webp", "p2.webp", "p3.webp", "p4.webp", "p5.jpeg", "p6.jpeg",
           "p7.webp", "p8.jpg", "p9.webp", "p10.webp", "p11.webp", "p12.jpg",

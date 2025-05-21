@@ -3,7 +3,7 @@ import React from 'react';
 const PlantCareMistakes = () => {
   return (
     <section className="w-11/12 mx-auto my-32 bg-neutral-100 py-24 px-6 rounded-xl">
-      <h2 className="text-4xl font-semibold text-center">Plant Care Mistakes</h2>
+      <h2 className="text-4xl font-bold text-center">Top Plant Care Mistakes</h2>
       <p className="text-center text-xl mt-3">
         Avoid these to help your plants thrive!
       </p>
