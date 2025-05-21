@@ -45,7 +45,7 @@ const Banner = () => {
       {/* Slider -2 */}
       <SwiperSlide>
         <div className="relative w-full">
-          <img src="/public/assets/images/slider-2.jpg" alt="slider-2 image" />
+          <img src="/assets/images/slider-2.jpg" alt="slider-2 image" />
 
           {/* Left-to-right black gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent flex flex-col justify-center items-start text-white px-20">

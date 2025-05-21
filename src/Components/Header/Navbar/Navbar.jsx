@@ -48,10 +48,10 @@ const Navbar = () => {
 
       {/* right */}
       <div className="flex gap-4">
-        <Link>
+        <Link to={'/login'}>
           <button className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Login</button>
         </Link>
-        <Link>
+        <Link to={'/register'}>
           <button className="py-2 px-4 border-2 border-[#1F7158] bg-[#1F7158] text-white rounded-lg font-medium cursor-pointer">Register</button>
         </Link>
       </div>
