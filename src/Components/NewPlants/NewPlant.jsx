@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const NewPlant = ({ singlePlant }) => {
 
   // Destructure
-  const { image, plantName, category, description } = singlePlant;
+  const { image, plantName, category, description, _id } = singlePlant;
 
 
   return (
@@ -25,7 +26,9 @@ const NewPlant = ({ singlePlant }) => {
 
 
           <div className='mt-5'>
-            <button className='bg-black text-white py-3 px-6 w-full rounded-lg text-xl'>View Details</button>
+            <Link to={`/viewDetails/${_id}`}>
+              <button className='bg-black text-white py-3 px-6 w-full rounded-lg text-xl cursor-pointer'>View Details</button>
+            </Link>
           </div>
         </div>
       </div>

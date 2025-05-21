@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const SinglePlant = ({ plant }) => {
-  const { plantName, category, image, wateringFrequency } = plant;
+  const { plantName, category, image, wateringFrequency, _id } = plant;
 
   return (
     <tr className="text-lg">
@@ -22,7 +23,9 @@ const SinglePlant = ({ plant }) => {
       <td className="text-lg text-center">{category}</td>
       <td className="text-lg text-center">{wateringFrequency}</td>
       <td className='flex justify-center'>
-        <button className="bg-[#1F7158] text-white text-lg py-2 px-6 rounded-md">View Details</button>
+        <Link to={`/viewDetails/${_id}`}>
+          <button className="bg-[#1F7158] text-white text-lg py-2 px-6 rounded-md cursor-pointer">View Details</button>
+        </Link>
       </td>
     </tr>
   );
