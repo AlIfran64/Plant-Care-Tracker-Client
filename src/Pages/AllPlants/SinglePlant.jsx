@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const SinglePlant = ({ plant }) => {
-  const { plantName, category, image, wateringFrequency, _id } = plant;
+  const { plantName, category, image, wateringFrequency, _id, nextWatering } = plant;
 
   return (
     <tr className="text-base sm:text-lg">
+      {/* Plant Info: Image + Name */}
       <td>
         <div className="flex items-center gap-4">
           <div className="avatar">
@@ -18,8 +19,17 @@ const SinglePlant = ({ plant }) => {
           </div>
         </div>
       </td>
+
+      {/* Category */}
       <td className="text-base sm:text-lg text-center">{category}</td>
+
+      {/* Watering Frequency */}
       <td className="text-base sm:text-lg text-center">{wateringFrequency}</td>
+
+      {/* Next Watering */}
+      <td className="text-base sm:text-lg text-center">{nextWatering}</td>
+
+      {/* View Details Button */}
       <td>
         <div className="flex justify-center items-center">
           <Link to={`/viewDetails/${_id}`}>
@@ -30,7 +40,6 @@ const SinglePlant = ({ plant }) => {
         </div>
       </td>
     </tr>
-
   );
 };
 

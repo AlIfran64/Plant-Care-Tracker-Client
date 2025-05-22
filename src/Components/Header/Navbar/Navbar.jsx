@@ -69,11 +69,13 @@ const Navbar = () => {
         <div>
           {
             user && <img
-              className='w-12 h-12 rounded-full border-2 border-[#1F7158]'
+              className="w-11 h-11 rounded-full border-2 border-[#1F7158] ring-2 ring-offset-1 ring-white shadow-md hover:scale-105 transition-transform duration-200 ease-in-out"
               src={user.photoURL}
               data-tooltip-id="userTooltip"
-              data-tooltip-content={user.displayName || "No Name"}
-              alt="image" />
+              data-tooltip-content={user.displayName || 'No Name'}
+              alt="User avatar"
+            />
+
           }
           <Tooltip id="userTooltip" place="bottom" />
 
