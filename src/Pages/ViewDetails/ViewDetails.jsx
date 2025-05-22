@@ -22,19 +22,19 @@ const ViewDetails = () => {
   } = data;
 
   return (
-    <div className='w-11/12 mx-auto my-40'>
+    <div className='w-11/12 mx-auto mt-20 lg:my-40'>
       <h1 className='text-5xl font-bold text-center'>View Details</h1>
       <p className='text-center text-2xl mt-4'>Everything You Need to Care for This Plant</p>
 
-      <div className='border border-gray-300 mt-16 p-10 rounded-xl flex justify-between items-stretch gap-10'>
+      <div className='border border-gray-300 mt-16 p-10 rounded-xl lg:flex justify-between items-stretch gap-10'>
 
         {/* left */}
-        <div className='w-1/2'>
+        <div className='lg:w-1/2'>
           <img className='rounded-xl object-cover h-full' src={image} alt="image" />
         </div>
 
         {/* right */}
-        <div className='w-1/2'>
+        <div className='lg:w-1/2'>
           <h1 className='text-4xl font-semibold'>{plantName}</h1>
           <p className='text-2xl mt-2 text-gray-600'>{category}</p>
           <p className='text-xl text-justify my-5'>{description}</p>

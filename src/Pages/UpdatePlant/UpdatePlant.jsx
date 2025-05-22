@@ -1,56 +1,60 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
-import { FaArrowLeft } from "react-icons/fa";
-import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthContext/AuthContext';
+import { useLoaderData } from "react-router";
+import { toast } from 'react-toastify';
 
+const UpdatePlant = () => {
 
-const AddPlant = () => {
-
+  // get current user info
   const { user } = useContext(AuthContext);
 
+  // load data
+  const plantData = useLoaderData();
+
+  // Destructure
+  const { image, plantName, category, careLevel, wateringFrequency, lastWatered, nextWatering, healthStatus, description, _id
+  } = plantData;
 
 
-  // Handle Add Plant
-  const handleAddPLant = (e) => {
+  // Handle Update (PUT)
+  const handleUpdatePlant = (e) => {
     e.preventDefault();
 
-
-    // get data from input
+    // Get data from input
     const form = e.target;
     const formData = new FormData(form);
-    const addPlantData = Object.fromEntries(formData.entries());
-    console.log(addPlantData);
+    const updatedPlantData = Object.fromEntries(formData.entries());
 
-    // Post add plant data to db
-    fetch('http://localhost:3000/plants', {
-      method: "POST",
+    // update: PUT
+    fetch(`http://localhost:3000/plants/${_id}`, {
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(addPlantData),
-      // …
+      body: JSON.stringify(updatedPlantData)
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-          toast.success("Plant Added Successfully!")
-          form.reset();
+        if (data.modifiedCount) {
+          toast.success("Plant Updated Successfully!")
         }
+
       })
 
   }
+
+
   return (
     <div className=' mx-auto bg-[url("/assets/images/background.png")] bg-no-repeat bg-cover py-12 md:py-36'>
 
       <div className='bg-[#F2F2F2] max-w-7xl mx-auto rounded-lg p-24'>
-        <h1 className='text-4xl font-semibold text-center mb-5 text-[#374151]'>Add Plant</h1>
-        <p className='text-center text-xl leading-7 sub-heading'>Fill in the details below to contribute a new plant to our green community.</p>
+        <h1 className='text-4xl font-semibold text-center mb-5 text-[#374151]'>Update Plant</h1>
+        <p className='text-center text-xl leading-7 sub-heading'>Update your plant information to ensure it's always up to date.</p>
 
         {/* form */}
         <div className='mt-20'>
 
-          <form onSubmit={handleAddPLant}>
+          <form onSubmit={handleUpdatePlant}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
               {/* Image URL */}
@@ -61,6 +65,7 @@ const AddPlant = () => {
                   name="image"
                   placeholder="Enter image URL"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={image}
                   required
                 />
               </div>
@@ -73,6 +78,7 @@ const AddPlant = () => {
                   name="plantName"
                   placeholder="Enter plant name"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={plantName}
                   required
                 />
               </div>
@@ -83,6 +89,7 @@ const AddPlant = () => {
                 <select
                   name="category"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={category}
                   required
                 >
                   <option value="">Select category</option>
@@ -100,6 +107,7 @@ const AddPlant = () => {
                 <select
                   name="careLevel"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={careLevel}
                   required
                 >
                   <option value="">Select care level</option>
@@ -117,6 +125,7 @@ const AddPlant = () => {
                   name="wateringFrequency"
                   placeholder="e.g., every 3 days"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={wateringFrequency}
                   required
                 />
               </div>
@@ -128,6 +137,7 @@ const AddPlant = () => {
                   type="date"
                   name="lastWatered"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={lastWatered}
                   required
                 />
               </div>
@@ -139,6 +149,7 @@ const AddPlant = () => {
                   type="date"
                   name="nextWatering"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={nextWatering}
                   required
                 />
               </div>
@@ -151,6 +162,7 @@ const AddPlant = () => {
                   name="healthStatus"
                   placeholder="Enter plant health status"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  defaultValue={healthStatus}
                   required
                 />
               </div>
@@ -190,6 +202,7 @@ const AddPlant = () => {
                   name="description"
                   placeholder="Enter plant description"
                   className="bg-white py-3 px-4 w-full mt-2 rounded-md h-32 resize-none"
+                  defaultValue={description}
                   required
                 ></textarea>
               </div>
@@ -200,16 +213,14 @@ const AddPlant = () => {
               type="submit"
               className="w-full bg-[#1F7158] text-white text-xl py-3 rounded-md mt-6 cursor-pointer"
             >
-              Add Plant
+              Update Plant
             </button>
           </form>
 
         </div>
       </div>
     </div>
-
-
   );
 };
 
-export default AddPlant;
+export default UpdatePlant;

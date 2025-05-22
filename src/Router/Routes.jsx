@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdatePlant from "../Pages/UpdatePlant/UpdatePlant";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,15 @@ export const router = createBrowserRouter([
             <MyPlants></MyPlants>
           </PrivateRoutes>,
         loader: () => fetch('http://localhost:3000/plants'),
+        hydrateFallbackElement:
+          <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
+      },
+      {
+        path: '/updatePlant/:id',
+        element: <UpdatePlant></UpdatePlant>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>

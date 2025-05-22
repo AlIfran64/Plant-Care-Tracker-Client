@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router'
 import { AuthContext } from '../../Context/AuthContext/AuthContext';
 import MyPlant from './MyPlant';
@@ -11,15 +11,21 @@ const MyPlants = () => {
   // load data
   const data = useLoaderData();
 
+  // immediate delete plant card from website. No reloading needed.
+  const [plants, setPlants] = useState(data);
+
   // get current user info
   const { user } = useContext(AuthContext);
 
-  const myPlants = data.filter((item) => item.userEmail === user.email);
+  const myPlants = plants.filter((item) => item.userEmail === user.email);
   console.log(myPlants);
 
 
   return (
-    <div className='mt-36 w-11/12 mx-auto'>
+    <div className='lg:mt-40 mt-20 w-11/12 mx-auto'>
+
+      <h1 className='text-4xl font-bold text-center'>My Plants</h1>
+      <p className='text-center text-xl mt-3 mb-16'>Track, manage, and nurture your personal plant collection with ease.</p>
 
 
       {
@@ -36,9 +42,14 @@ const MyPlants = () => {
             </div>
           </div>
           :
-          <div>
+          <div className='grid grid-cols-1 lg:grid-cols-3 justify-center place-items-center gap-10'>
             {
-              myPlants.map((plant) => <MyPlant key={plant._id} plant={plant}></MyPlant>)
+              myPlants.map((plant) => <MyPlant
+                key={plant._id}
+                plant={plant}
+                plants={plants}
+                setPlants={setPlants}
+              ></MyPlant>)
             }
           </div>
       }

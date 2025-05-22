@@ -11,7 +11,7 @@ const NewPlant = ({ singlePlant }) => {
     <div className=' rounded-xl p-3 shadow-lg'>
       {/* image */}
       <div className='border-2 border-gray-100 rounded-xl p-3'>
-        <img className='w-[450px] h-[320px] rounded-xl' src={image} alt="image" />
+        <img className='w-[450px] h-[320px] mx-auto rounded-xl' src={image} alt="image" />
 
         <div className='px-3'>
           <div className='mt-5'>
