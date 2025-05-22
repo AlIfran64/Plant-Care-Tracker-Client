@@ -8,6 +8,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -19,35 +20,44 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch('http://localhost:3000/plants'),
         hydrateFallbackElement:
-          <div className='w-11/12 mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+          <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
           </div>
       },
       {
         path: '/addPlant',
-        element: <AddPlant></AddPlant>
+        element:
+          <PrivateRoutes>
+            <AddPlant></AddPlant>
+          </PrivateRoutes>
       },
       {
         path: '/allPlants',
         element: <AllPlants></AllPlants>,
         loader: () => fetch('http://localhost:3000/plants'),
         hydrateFallbackElement:
-          <div className='w-11/12 mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+          <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
           </div>
       },
       {
         path: '/viewDetails/:id',
-        element: <ViewDetails></ViewDetails>,
+        element:
+          <PrivateRoutes>
+            <ViewDetails></ViewDetails>
+          </PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
         hydrateFallbackElement:
-          <div className='w-11/12 mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+          <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
           </div>
       },
       {
         path: '/myPlants',
-        element: <MyPlants></MyPlants>
+        element:
+          <PrivateRoutes>
+            <MyPlants></MyPlants>
+          </PrivateRoutes>
       },
       {
         path: '/login',

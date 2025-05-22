@@ -1,11 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { AuthContext } from '../../../Context/AuthContext/AuthContext';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
 
   const [navModal, setNavModal] = useState(false);
 
+  const { user, logOut } = useContext(AuthContext);
+
+  // Handle log out
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+        toast.success("Logged out successfully")
+      }).catch((error) => {
+        // An error happened.
+        toast.error(error);
+      });
+
+  }
 
 
   return (
@@ -47,14 +63,23 @@ const Navbar = () => {
       </div>
 
       {/* right */}
-      <div className="flex gap-4">
-        <Link to={'/login'}>
-          <button className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Login</button>
-        </Link>
-        <Link to={'/register'}>
-          <button className="py-2 px-4 border-2 border-[#1F7158] bg-[#1F7158] text-white rounded-lg font-medium cursor-pointer">Register</button>
-        </Link>
-      </div>
+
+      {
+        user ? <div className='flex gap-4'>
+          <button onClick={handleLogOut} className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Logout</button>
+        </div>
+          :
+          <div className="flex gap-4">
+            <Link to={'/login'}>
+              <button className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Login</button>
+            </Link>
+            <Link to={'/register'}>
+              <button className="py-2 px-4 border-2 border-[#1F7158] bg-[#1F7158] text-white rounded-lg font-medium cursor-pointer">Register</button>
+            </Link>
+          </div>
+      }
+
+
     </div>
   );
 };
