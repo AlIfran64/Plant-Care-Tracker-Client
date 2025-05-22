@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import { FaArrowLeft } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../Context/AuthContext/AuthContext';
+
 
 const AddPlant = () => {
+
+  const { user } = useContext(AuthContext);
+
+
 
   // Handle Add Plant
   const handleAddPLant = (e) => {
@@ -39,7 +45,7 @@ const AddPlant = () => {
 
 
       {/* back btn */}
-      <div className="max-w-7xl mx-auto">
+      {/* <div className="max-w-7xl mx-auto">
         <Link className='inline-block' to={'/'}>
           <button
             className="mb-10 px-6 py-3 bg-[#1F7158] text-white rounded-md text-lg flex items-center gap-2 cursor-pointer"
@@ -48,7 +54,7 @@ const AddPlant = () => {
             <span className='text-xl'>Back to home</span>
           </button>
         </Link>
-      </div>
+      </div> */}
 
 
       <div className='bg-[#F2F2F2] max-w-7xl mx-auto rounded-lg p-24'>
@@ -170,7 +176,9 @@ const AddPlant = () => {
                   type="email"
                   name="userEmail"
                   placeholder="Enter your email"
-                  className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  value={user?.email || ''}
+                  readOnly
+                  className="bg-gray-100 text-gray-500 border border-gray-300 py-3 px-4 w-full mt-2 rounded-md cursor-not-allowed"
                   required
                 />
               </div>
@@ -182,7 +190,9 @@ const AddPlant = () => {
                   type="text"
                   name="userName"
                   placeholder="Enter your name"
-                  className="bg-white py-3 px-4 w-full mt-2 rounded-md"
+                  value={user?.displayName || ''}
+                  readOnly
+                  className="bg-gray-100 text-gray-500 border border-gray-300 py-3 px-4 w-full mt-2 rounded-md cursor-not-allowed"
                   required
                 />
               </div>
