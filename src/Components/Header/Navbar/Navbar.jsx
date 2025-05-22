@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AuthContext } from '../../../Context/AuthContext/AuthContext';
 import { toast } from 'react-toastify';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
 
@@ -67,8 +68,15 @@ const Navbar = () => {
         {/* -------- */}
         <div>
           {
-            user && <img className='w-12 h-12 rounded-full border-2 border-[#1F7158]' src={user.photoURL} alt="image" />
+            user && <img
+              className='w-12 h-12 rounded-full border-2 border-[#1F7158]'
+              src={user.photoURL}
+              data-tooltip-id="userTooltip"
+              data-tooltip-content={user.displayName || "No Name"}
+              alt="image" />
           }
+          <Tooltip id="userTooltip" place="bottom" />
+
 
         </div>
 
