@@ -1,12 +1,16 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Footer from '../../Components/Footer/Footer';
-import Banner from '../../Components/Header/Banner/Banner';
 import Navbar from '../../Components/Header/Navbar/Navbar';
 
 
 
 const Root = () => {
+
+
+  const { state } = useNavigation();
+
+
   return (
     <div>
 
@@ -18,7 +22,15 @@ const Root = () => {
       </header>
 
       <main>
-        <Outlet></Outlet>
+        {
+          state == "loading" ?
+            <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+              <span className="loading loading-spinner loading-lg"></span>
+            </div>
+            :
+            <Outlet></Outlet>
+        }
+
       </main>
 
       <footer>

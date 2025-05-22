@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthContext/AuthContext';
 
 const Register = () => {
 
-  const { register, googleLogin, setUser } = useContext(AuthContext);
+  const { register, googleLogin, setUser, updateUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   // Handle Register
   const handleRegister = (e) => {
@@ -18,14 +20,40 @@ const Register = () => {
     console.log(registerData);
 
     // destructuring
-    const { email, password } = registerData;
+    const { name, photo, email, password } = registerData;
+
+
+    // Password validation
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long.");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must include at least one uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must include at least one lowercase letter.");
+      return;
+    }
+
 
     // Register
     register(email, password)
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            toast.success("Profile Updated!")
+            setUser({ ...user, displayName: name, photoURL: photo });
+            navigate("/");
+
+          }).catch((error) => {
+            toast.error(error);
+            setUser(user)
+          });;
+
 
         toast.success("Registration Completed Successfully!")
         // ...
@@ -43,8 +71,8 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-        console.log(user);
-
+        setUser(user);
+        navigate("/")
 
       }).catch((error) => {
         const errorMessage = error.message;

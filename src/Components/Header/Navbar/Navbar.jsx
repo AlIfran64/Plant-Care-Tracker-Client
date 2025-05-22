@@ -15,7 +15,7 @@ const Navbar = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
-        toast.success("Logged out successfully")
+        toast.success("Successfully Logged Out")
       }).catch((error) => {
         // An error happened.
         toast.error(error);
@@ -63,21 +63,35 @@ const Navbar = () => {
       </div>
 
       {/* right */}
+      <div className='flex justify-end items-center gap-3'>
+        {/* -------- */}
+        <div>
+          {
+            user && <img className='w-12 h-12 rounded-full border-2 border-[#1F7158]' src={user.photoURL} alt="image" />
+          }
 
-      {
-        user ? <div className='flex gap-4'>
-          <button onClick={handleLogOut} className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Logout</button>
         </div>
-          :
-          <div className="flex gap-4">
-            <Link to={'/login'}>
-              <button className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Login</button>
-            </Link>
-            <Link to={'/register'}>
-              <button className="py-2 px-4 border-2 border-[#1F7158] bg-[#1F7158] text-white rounded-lg font-medium cursor-pointer">Register</button>
-            </Link>
+
+        {/* ------- */}
+        {
+          user ? <div className='flex gap-4'>
+            <button onClick={handleLogOut} className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Logout</button>
           </div>
-      }
+            :
+            <div className="flex gap-4">
+              <Link to={'/login'}>
+                <button className="py-2 px-4 border-2 border-[#1F7158] rounded-lg font-medium text-[#1F7158] cursor-pointer">Login</button>
+              </Link>
+              <Link to={'/register'}>
+                <button className="py-2 px-4 border-2 border-[#1F7158] bg-[#1F7158] text-white rounded-lg font-medium cursor-pointer">Register</button>
+              </Link>
+            </div>
+        }
+
+
+      </div>
+
+
 
 
     </div>
