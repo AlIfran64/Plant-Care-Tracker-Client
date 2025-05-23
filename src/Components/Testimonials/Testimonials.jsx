@@ -21,29 +21,39 @@ const testimonials = [
   }
 ];
 
-export default function Testimonials() {
+function Testimonials() {
   return (
-    <div className=" py-24 px-6 md:px-8 bg-neutral-100">
-      <h2 className="text-center text-4xl font-bold">What Our Users Say</h2>
-      <p className='text-center mt-3 text-xl'>Real experiences from real users who’ve grown with us.</p>
+    <div className="py-24 px-6 md:px-8 bg-neutral-100 dark:bg-neutral-900">
+      <h2 className="text-center text-4xl font-bold text-neutral-900 dark:text-neutral-100">
+        What Our Users Say
+      </h2>
+      <p className="text-center mt-3 text-xl text-neutral-800 dark:text-neutral-300">
+        Real experiences from real users who’ve grown with us.
+      </p>
       <div className="w-11/12 mx-auto grid gap-6 md:grid-cols-3 mt-15">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-2xl p-15"
+            className="bg-white dark:bg-neutral-800 shadow-lg rounded-2xl p-15"
           >
-            <div className='flex justify-center mb-6'>
+            <div className="flex justify-center mb-6">
               <div className="avatar">
-                <div className="w-24 rounded-full ring-2 ring-offset-2">
-                  <img src={testimonial.image} />
+                <div className="w-24 rounded-full ring-2 ring-offset-2 ring-gray-300 dark:ring-gray-700">
+                  <img src={testimonial.image} alt={testimonial.name} />
                 </div>
               </div>
             </div>
-            <p className="text-gray-700 text-base mb-4 italic">"{testimonial.quote}"</p>
-            <h4 className=" font-semibold text-lg text-right">– {testimonial.name}</h4>
+            <p className="text-gray-700 dark:text-gray-300 text-base mb-4 italic">
+              "{testimonial.quote}"
+            </p>
+            <h4 className="font-semibold text-lg text-right text-neutral-900 dark:text-neutral-100">
+              – {testimonial.name}
+            </h4>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+export default Testimonials;

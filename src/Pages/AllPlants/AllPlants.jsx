@@ -23,7 +23,7 @@ const AllPlants = () => {
                 <th className='text-xl text-center'>Category</th>
                 <th className='text-xl text-center'>Watering Frequency</th>
                 <th className='text-xl text-center'>Next Watering</th>
-                <th className='text-xl text-center'>Action</th>
+                <th className='text-xl text-center'>Details</th>
               </tr>
             </thead>
             <tbody>

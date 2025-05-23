@@ -5,12 +5,19 @@ import { RouterProvider } from "react-router";
 import { router } from './Router/Routes.jsx';
 import { ToastContainer } from 'react-toastify';
 import AuthProvider from './Context/AuthProvider/AuthProvider.jsx';
+import { ThemeProvider } from './Context/ThemeProvider/ThemeProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ToastContainer className="p-6 text-lg" />
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+
+    <ThemeProvider>
+
+      <ToastContainer className="p-6 text-lg" />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+
+    </ThemeProvider>
+
   </StrictMode>,
 )

@@ -6,9 +6,7 @@ import { getYear } from 'date-fns';
 const Footer = () => {
   return (
     <div>
-      <div>
-        <img src="/assets/images/lush-greenery-vibrant-collection-ferns-tropical-foliage.png" alt="" />
-      </div>
+
       <footer className="footer sm:footer-horizontal bg-[#032928] text-white px-10 py-28 place-items-center">
 
         {/* Left */}

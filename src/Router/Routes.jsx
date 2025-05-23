@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
       {
         path: '/allPlants',
         element: <AllPlants></AllPlants>,
-        loader: () => fetch('http://localhost:3000/plants'),
+        loader: () => fetch('http://localhost:3000/sortedPlants'),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
