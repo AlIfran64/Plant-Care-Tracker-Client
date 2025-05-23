@@ -5,10 +5,8 @@ import NewPlant from './NewPlant';
 const NewPlants = () => {
   // load data
   const newPlantsData = useLoaderData();
-  console.log(newPlantsData);
 
   const initialNewPlantsData = newPlantsData.slice(0, 6);
-  console.log(initialNewPlantsData);
 
   const [data, setData] = useState(initialNewPlantsData);
   const [button, setButton] = useState(false);

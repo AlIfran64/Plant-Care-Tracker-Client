@@ -18,11 +18,11 @@ const MyPlants = () => {
   const { user } = useContext(AuthContext);
 
   const myPlants = plants.filter((item) => item.userEmail === user.email);
-  console.log(myPlants);
+
 
 
   return (
-    <div className='lg:mt-40 mt-20 w-11/12 mx-auto'>
+    <div className='lg:mt-40 mb-20 mt-20 w-11/12 mx-auto'>
 
       <h1 className='text-4xl font-bold text-center'>My Plants</h1>
       <p className='text-center text-xl mt-3 mb-16'>Track, manage, and nurture your personal plant collection with ease.</p>

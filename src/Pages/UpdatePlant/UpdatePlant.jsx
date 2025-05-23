@@ -26,7 +26,7 @@ const UpdatePlant = () => {
     const updatedPlantData = Object.fromEntries(formData.entries());
 
     // update: PUT
-    fetch(`http://localhost:3000/plants/${_id}`, {
+    fetch(`https://plantify-server-beige.vercel.app/plants/${_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

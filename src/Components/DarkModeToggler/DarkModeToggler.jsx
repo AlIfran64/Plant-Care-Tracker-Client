@@ -7,7 +7,7 @@ const DarkModeToggler = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className={`py-2 px-6 rounded-full transition-all text-xl
+      className={`py-2 px-2 rounded-xl transition-all text-2xl
         ${darkMode ? 'bg-gray-700 text-gray-200' : 'bg-gray-200 text-gray-800'}`}
     >
       {darkMode ? "🌞" : "🌑"}

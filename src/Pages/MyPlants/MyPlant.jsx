@@ -24,7 +24,7 @@ const MyPlant = ({ plant, plants, setPlants }) => {
 
         // Delete plant
 
-        fetch(`http://localhost:3000/plants/${_id}`, {
+        fetch(`https://plantify-server-beige.vercel.app/plants/${_id}`, {
           method: 'DELETE'
         })
           .then((res) => res.json())

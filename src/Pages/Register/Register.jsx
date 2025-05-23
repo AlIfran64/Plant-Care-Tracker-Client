@@ -17,7 +17,7 @@ const Register = () => {
     const form = e.target;
     const formData = new FormData(form);
     const registerData = Object.fromEntries(formData.entries());
-    console.log(registerData);
+
 
     // destructuring
     const { name, photo, email, password } = registerData;
@@ -84,7 +84,7 @@ const Register = () => {
 
 
   return (
-    <div className='flex justify-center items-center gap-2 max-w-4xl mx-auto mt-36 px-4 flex-col lg:flex-row  rounded-2xl p-5 shadow-2xl'>
+    <div className='flex justify-center items-center gap-2 max-w-4xl mx-auto lg:mt-36 mt-20 mb-20 px-4 flex-col lg:flex-row  rounded-2xl p-5 shadow-2xl'>
 
       {/* left */}
       <div>

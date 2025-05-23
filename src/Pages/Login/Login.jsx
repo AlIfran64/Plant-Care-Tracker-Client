@@ -27,7 +27,7 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user);
+
         toast.success("Successfully Logged In!")
         navigate(`${location.state ? location.state : "/"}`)
         // ...
@@ -76,7 +76,7 @@ const Login = () => {
 
 
   return (
-    <div className='flex justify-center items-center gap-2 max-w-4xl mx-auto mt-36 px-4 flex-col lg:flex-row rounded-2xl p-5 shadow-2xl'>
+    <div className='flex justify-center items-center gap-2 max-w-4xl mx-auto lg:mt-36 mt-20 mb-20 px-4 flex-col lg:flex-row rounded-2xl p-5 shadow-2xl'>
 
       {/* left */}
       <div>

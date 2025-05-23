@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 const ViewDetails = () => {
   // load data
   const data = useLoaderData();
-  console.log(data);
+
 
   // destructuring
   const {

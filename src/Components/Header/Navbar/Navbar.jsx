@@ -75,7 +75,7 @@ const Navbar = () => {
       </div>
 
       {/* right */}
-      <div className='flex justify-end items-center gap-3'>
+      <div className='flex justify-end items-center gap-5'>
 
         {/* Dark Mode Toggle */}
         <DarkModeToggler />
@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* User Avatar */}
         {user && (
           <img
-            className="w-12 h-12 rounded-full border-2 border-neutral-200 ring-2 ring-offset-1 ring-white dark:ring-offset-gray-800 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out"
+            className="w-12 h-12 rounded-full border-1 border-neutral-200 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out"
             src={user.photoURL}
             data-tooltip-id="userTooltip"
             data-tooltip-content={user.displayName || 'No Name'}

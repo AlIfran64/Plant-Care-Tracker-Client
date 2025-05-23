@@ -20,10 +20,10 @@ const AddPlant = () => {
     const form = e.target;
     const formData = new FormData(form);
     const addPlantData = Object.fromEntries(formData.entries());
-    console.log(addPlantData);
+
 
     // Post add plant data to db
-    fetch('http://localhost:3000/plants', {
+    fetch('https://plantify-server-beige.vercel.app/plants', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

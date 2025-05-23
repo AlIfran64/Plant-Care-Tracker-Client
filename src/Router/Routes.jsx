@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:3000/plants'),
+        loader: () => fetch('https://plantify-server-beige.vercel.app/plants'),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
       {
         path: '/allPlants',
         element: <AllPlants></AllPlants>,
-        loader: () => fetch('http://localhost:3000/sortedPlants'),
+        loader: () => fetch('https://plantify-server-beige.vercel.app/sortedPlants'),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
           <PrivateRoutes>
             <ViewDetails></ViewDetails>
           </PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
+        loader: ({ params }) => fetch(`https://plantify-server-beige.vercel.app/plants/${params.id}`),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
           <PrivateRoutes>
             <MyPlants></MyPlants>
           </PrivateRoutes>,
-        loader: () => fetch('http://localhost:3000/plants'),
+        loader: () => fetch('https://plantify-server-beige.vercel.app/plants'),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>
@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
       {
         path: '/updatePlant/:id',
         element: <UpdatePlant></UpdatePlant>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
+        loader: ({ params }) => fetch(`https://plantify-server-beige.vercel.app/plants/${params.id}`),
         hydrateFallbackElement:
           <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
             <span className="loading loading-spinner loading-lg"></span>

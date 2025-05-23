@@ -7,7 +7,7 @@ const AllPlants = () => {
 
   // load data
   const allPlantsData = useLoaderData();
-  console.log(allPlantsData);
+
 
   return (
     <div className='lg:mt-40 mt-20 max-w-7xl mx-auto px-4 sm:px-6'>
