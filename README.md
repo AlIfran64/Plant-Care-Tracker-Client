@@ -18,7 +18,7 @@
 - 📅 **Sorted by Watering Date**  
   Plants are automatically sorted by their next scheduled watering date for timely reminders.
 
-- 🔄 **Full CRUD via REST API**  
+- 🔄 **CRUD via REST API**  
   Backend built with Node.js and Express supports create, read, update, and delete operations for each user's plants.
 
 - ☁️ **MongoDB Atlas Integration**  
