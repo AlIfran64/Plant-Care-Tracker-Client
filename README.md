@@ -1,12 +1,57 @@
-# React + Vite
+# 🌿 Plantify - A Plant Care Tracker Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[🌐 Live Website](https://plantify-7ddd6.web.app/)
 
-Currently, two official plugins are available:
+**Plantify** is a smart and user-friendly plant care tracker designed to help users manage their plant collection with ease. With real-time user authentication, secure data storage, and an intuitive UI, Plantify helps plant lovers keep track of watering schedules and plant health—all in one place.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🪴 **Add & View Plants**  
+  Users can add new plants with species name, watering frequency, and other metadata.
+
+- 🔐 **Secure Firebase Authentication**  
+  Firebase handles user login and registration, ensuring only logged-in users access their own plant data.
+
+- 📅 **Sorted by Watering Date**  
+  Plants are automatically sorted by their next scheduled watering date for timely reminders.
+
+- 🔄 **Full CRUD via REST API**  
+  Backend built with Node.js and Express supports create, read, update, and delete operations for each user's plants.
+
+- ☁️ **MongoDB Atlas Integration**  
+  All plant data is securely stored in MongoDB Atlas, a scalable and cloud-based NoSQL database.
+
+---
+
+## 🧪 Tech Stack
+
+### 🔧 Frontend
+- **React.js** – Component-based UI
+- **Tailwind CSS** – Utility-first CSS framework
+- **Firebase Authentication** – User login/register
+
+### ⚙️ Backend
+- **Node.js** – JavaScript runtime
+- **Express.js** – Lightweight web framework
+- **MongoDB Atlas** – Cloud-based NoSQL database
+
+---
+
+### 🔹 Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+---
+
+### 🔹 Backend Setup
+
+```bash
+cd server
+npm install
+nodemon index.js
+```
