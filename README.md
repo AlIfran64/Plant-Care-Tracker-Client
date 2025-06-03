@@ -4,7 +4,7 @@
 
 ---
 ## 🔗 Live Site
-[🌐 Live Website](https://plantify-7ddd6.web.app/)
+🌐 https://plantify-7ddd6.web.app/
 ---
 
 ## 🚀 Features
