@@ -7,6 +7,14 @@
 
 ---
 
+---
+
+### 🔗 Server Repositories
+
+- [Plant Care Tracker - Server](https://github.com/AlIfran64/Plant-Care-Tracker-Server)
+
+---
+
 ## 🚀 Features
 
 - 🪴 **Add & View Plants**  
