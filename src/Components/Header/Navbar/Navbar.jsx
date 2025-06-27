@@ -39,6 +39,10 @@ const Navbar = () => {
               isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : 'px-4 py-2'}>
               All Plants
             </NavLink>
+            <NavLink to='/dashBoard' className={({ isActive }) =>
+              isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : 'px-4 py-2'}>
+              DashBoard
+            </NavLink>
             <NavLink to='/addPlant' className={({ isActive }) =>
               isActive ? 'px-4 py-2 bg-[#123524] text-white rounded-sm' : 'px-4 py-2'}>
               Add Plant
@@ -63,6 +67,10 @@ const Navbar = () => {
         <NavLink to="/allPlants" className={({ isActive }) =>
           isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>
           All Plants
+        </NavLink>
+        <NavLink to="/dashBoard" className={({ isActive }) =>
+          isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>
+          DashBoard
         </NavLink>
         <NavLink to="/addPlant" className={({ isActive }) =>
           isActive ? "underline text-[#1F7158] font-semibold text-lg" : "text-lg"}>

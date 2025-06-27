@@ -10,6 +10,8 @@ import Register from "../Pages/Register/Register";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdatePlant from "../Pages/UpdatePlant/UpdatePlant";
+import DashBoard from "../Layouts/DashBoard/DashBoard";
+import DashBoardContent from "../Pages/DashBoardContent/DashBoardContent";
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +83,24 @@ export const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      }
+    ]
+  },
+  {
+    path: '/dashBoard',
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        index: true,
+        element:
+          <PrivateRoutes>
+            <DashBoardContent></DashBoardContent>
+          </PrivateRoutes>,
+        loader: () => fetch('https://plantify-server-beige.vercel.app/plants'),
+        hydrateFallbackElement:
+          <div className='w-11/12 h-screen mx-auto flex justify-center items-center bg-white py-3 rounded-2xl'>
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
       }
     ]
   },
