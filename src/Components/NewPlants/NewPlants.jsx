@@ -35,7 +35,7 @@ const NewPlants = () => {
               }}
               className='inline-block'
             >
-              <button className='mt-10 py-3 px-15 bg-[#1f7158] text-xl text-white rounded-lg'>
+              <button className='mt-10 py-3 px-15 bg-black text-xl text-white rounded-lg font-semibold'>
                 See Less
               </button>
             </div>
@@ -47,7 +47,7 @@ const NewPlants = () => {
               }}
               className='inline-block'
             >
-              <button className='mt-10 py-3 px-15 bg-[#1f7158] dark:bg-black text-xl text-white rounded-lg cursor-pointer'>
+              <button className='mt-10 py-3 px-15 bg-black dark:bg-black text-lg text-white rounded-lg cursor-pointer font-semibold'>
                 See All
               </button>
             </div>

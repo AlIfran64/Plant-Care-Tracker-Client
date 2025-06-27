@@ -29,13 +29,6 @@ const Footer = () => {
           <NavLink className={({ isActive }) => isActive ? 'underline text-sm lg:text-lg' : 'text-sm lg:text-lg'} to={'/addPlant'}>Add Plant</NavLink>
           <NavLink className={({ isActive }) => isActive ? 'underline text-sm lg:text-lg' : 'text-sm lg:text-lg'} to={'/myPlants'}>My Plants</NavLink>
         </div>
-        {/* legal */}
-        <div>
-          <h6 className="footer-title">LEGAL</h6>
-          <NavLink className="text-sm lg:text-lg">Terms & Conditions </NavLink>
-          <NavLink className="text-sm lg:text-lg">Privacy Policy </NavLink>
-          <NavLink className="text-sm lg:text-lg">Refund & Delivery Policy</NavLink>
-        </div>
 
         {/* right */}
         <div>
