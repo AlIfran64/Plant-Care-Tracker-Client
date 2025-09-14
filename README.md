@@ -1,4 +1,4 @@
-# Plantify - A Plant Care Tracker Websit
+# Plantify - A Plant Care Tracker Website
 
 **Plantify** is a smart and user-friendly plant care tracker designed to help users manage their plant collection with ease. With real-time user authentication, secure data storage, and an intuitive UI, Plantify helps plant lovers keep track of watering schedules and plant health all in one place.
 
