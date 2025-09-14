@@ -1,4 +1,4 @@
-# 🌿 Plantify - A Plant Care Tracker Website
+# Plantify - A Plant Care Tracker Website
 
 **Plantify** is a smart and user-friendly plant care tracker designed to help users manage their plant collection with ease. With real-time user authentication, secure data storage, and an intuitive UI, Plantify helps plant lovers keep track of watering schedules and plant health all in one place.
 
@@ -7,46 +7,46 @@
 
 ---
 
-## 🖥️ Server Repositories
+## Features
 
-- [Plant Care Tracker - Server](https://github.com/AlIfran64/Plant-Care-Tracker-Server)
-
----
-
-## 🚀 Features
-
-- 🪴 **Add & View Plants**  
+- **Add & View Plants**  
   Users can add new plants with species name, watering frequency, and other metadata.
 
-- 🔐 **Secure Firebase Authentication**  
+- **Secure Firebase Authentication**  
   Firebase handles user login and registration, ensuring only logged-in users access their own plant data.
 
-- 📅 **Sorted by Watering Date**  
+- **Sorted by Watering Date**  
   Plants are automatically sorted by their next scheduled watering date for timely reminders.
 
-- 🔄 **CRUD via REST API**  
+- **CRUD via REST API**  
   Backend built with Node.js and Express supports create, read, update, and delete operations for each user's plants.
 
-- ☁️ **MongoDB Atlas Integration**  
+- **MongoDB Atlas Integration**  
   All plant data is securely stored in MongoDB Atlas, a scalable and cloud-based NoSQL database.
 
 ---
 
-## 🧪 Tech Stack
+## 🔗 Additional Links
 
-### 🔧 Frontend
+- Server-side Repository: [https://github.com/AlIfran64/Plant-Care-Tracker-Server](https://github.com/AlIfran64/Plant-Care-Tracker-Server)
+
+---
+
+## Tech Stack
+
+### Frontend
 - **React.js** – Component-based UI
 - **Tailwind CSS** – Utility-first CSS framework
 - **Firebase Authentication** – User login/register
 
-### ⚙️ Backend
+### Backend
 - **Node.js** – JavaScript runtime
 - **Express.js** – Lightweight web framework
 - **MongoDB Atlas** – Cloud-based NoSQL database
 
 ---
 
-### 🔹 Frontend Setup
+### Frontend Setup
 
 ```bash
 cd client
@@ -55,7 +55,7 @@ npm run dev
 ```
 ---
 
-### 🔹 Backend Setup
+### Backend Setup
 
 ```bash
 cd server
